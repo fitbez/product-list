@@ -7,17 +7,17 @@ export function ProductProvider(props) {
     {
       id: 1,
       name: "phone",
-      price: "$400.00",
+      price: "400.00",
     },
     {
       id: 2,
       name: "desktop computer",
-      price: "$500.00",
+      price: "500.00",
     },
     {
       id: 3,
       name: "Monitor",
-      price: "$100.00",
+      price: "100.00",
     },
   ]);
   return (

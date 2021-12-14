@@ -1,0 +1,35 @@
+.product-panel {
+  display: flex;
+  background-color: #f4f4f4;
+  margin-top: 0.5rem;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 80%;
+}
+
+.action {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.btn-edit {
+  background-color: rgb(27, 218, 228);
+  color: #fff;
+  padding: 5px;
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn-delete {
+  background-color: rgb(196, 18, 42);
+  color: #fff;
+  padding: 5px;
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
