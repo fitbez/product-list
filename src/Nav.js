@@ -5,7 +5,7 @@ import ProductContext from "./ProductContext";
 import { Link } from "react-router-dom";
 
 function Nav(props) {
-  const [products, setProducts] = useContext(ProductContext);
+  const { products } = useContext(ProductContext);
   return (
     <div className="nav">
       <Link to="/">Product List</Link>

@@ -1,13 +1,17 @@
-import React from "react";
+import { useContext } from "react";
 import Product from "./Product";
 import Nav from "./Nav";
+import { ProductContext } from "./ProductContext";
 
-function ProductsList(props) {
-  console.log(props);
+function ProductsList() {
+  // console.log(props);
+  const { products } = useContext(ProductContext);
   return (
     <div>
       <Nav />
-      <Product products={props.products} />
+      {products.map((product) => {
+        return <Product product={product} key={product.id} />;
+      })}
     </div>
   );
 }

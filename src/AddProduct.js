@@ -1,31 +1,31 @@
 import React, { useState, useContext } from "react";
 import { ProductContext } from "./ProductContext";
 import Nav from "./Nav";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+
+console.log(uuidv4());
 
 function AddProduct() {
-  const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState("");
-  const [products, setProducts] = useContext(ProductContext);
-  const [productId, setProductId] = useState(4);
+  const navigate = useNavigate();
+  const { addProduct } = useContext(ProductContext);
+  const [newProduct, setNewProduct] = useState({
+    name: "",
+    price: "",
+  });
 
-  const handleProductName = (e) => {
-    setProductName(e.target.value);
-  };
-
-  const handleProductPrice = (e) => {
-    setProductPrice(e.target.value);
-  };
+  const { name, price } = newProduct;
 
   const handleAddProduct = (e) => {
     e.preventDefault();
-    setProductId((id) => id + 1);
-    setProducts((prevProducts) => [
-      ...prevProducts,
-      { id: productId, name: productName, price: productPrice },
-    ]);
+    addProduct(name, price);
+    navigate("/");
   };
 
-  console.log(products);
+  const onInputChange = (e) => {
+    console.log(e.target.name);
+    setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
+  };
 
   return (
     <div>
@@ -35,13 +35,15 @@ function AddProduct() {
           type="text"
           name="name"
           placeholder="please insert product name"
-          onChange={handleProductName}
+          value={name}
+          onChange={(e) => onInputChange(e)}
         />
         <input
           type="text"
           name="price"
           placeholder="price"
-          onChange={handleProductPrice}
+          value={price}
+          onChange={(e) => onInputChange(e)}
         />
         <button>Submit</button>
       </form>
