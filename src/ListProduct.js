@@ -4,6 +4,7 @@ import "./product.css";
 
 function Product() {
   const { products } = useContext(ProductContext);
+  const { updateProduct } = useContext(ProductContext);
   return (
     <div>
       {products.map((product) => {

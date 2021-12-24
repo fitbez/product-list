@@ -30,10 +30,22 @@ export function ProductProvider(props) {
     setProducts(products.filter((pro) => pro.id !== id));
   };
 
+  const updateProduct = (id, updatedProduct) => {
+    setProducts(
+      products.map((product) => (product.id === id ? updatedProduct : product))
+    );
+  };
+
   return (
     <div>
       <ProductContext.Provider
-        value={{ products, setProducts, addProduct, deleteProduct }}
+        value={{
+          products,
+          setProducts,
+          addProduct,
+          deleteProduct,
+          updateProduct,
+        }}
       >
         {props.children}
       </ProductContext.Provider>

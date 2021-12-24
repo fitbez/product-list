@@ -10,7 +10,7 @@ function Nav(props) {
     <div className="nav">
       <Link to="/">Product List</Link>
       <p>I have {products.length} products in my list</p>
-      <Link to="/editProduct">Manage Product</Link>
+      <Link to="/manageProduct">Manage Product</Link>
       <Link to="/addProduct">Add Product</Link>
     </div>
   );
