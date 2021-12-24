@@ -25,11 +25,6 @@ function EditProduct({ product }) {
     updateProduct(id, updatedProduct);
   };
 
-  //   const onInputChange = (e) => {
-  //     console.log(e.target.name);
-  //     setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
-  //   };
-
   return (
     <div>
       <form onSubmit={handleEditProduct}>
