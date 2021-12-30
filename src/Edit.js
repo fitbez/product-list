@@ -49,3 +49,13 @@ function EditProduct({ product }) {
 }
 
 export default EditProduct;
+
+// MERN
+/**
+ * 
+ * MERN stack
+ * MONGODB
+ * EXPRESS
+ * REACT
+ * NODE
+ */
